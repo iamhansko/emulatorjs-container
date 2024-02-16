@@ -10,17 +10,25 @@
         <script type='text/javascript'>
             EJS_player = '#game';
             
-            // Can also be pcsx_rearmed or mednafen_psx_hw
-            EJS_core = 'psx';
+            // https://emulatorjs.org/docs/Systems.html
+            // PlayStation -> 'psx'
+            // Nintendo GameBoy -> 'gb'
+            // Nintendo DS -> 'nds'
+            // ...
+            EJS_core = 'nds';
             
             // URL to BIOS file
+            // https://github.com/Abdess/retroarch_system
             EJS_biosUrl = '';
             
             // URL to Game rom
-            EJS_gameUrl = 'games/castlevania_symphony_of_the_night.rar';
+            EJS_gameUrl = 'games/pokemon_heartgold.nds';
             
             // Path to the data directory
             EJS_pathtodata = 'data/';
+
+            // Localization
+            // EJS_language = '';
         </script>
         <script src='data/loader.js'></script>
     </body>
