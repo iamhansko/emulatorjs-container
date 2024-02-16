@@ -60,7 +60,7 @@ class EmulatorJS {
             'jaguar': 'virtualjaguar',
             'lynx': 'handy',
             'segaSaturn': 'yabause',
-            'segaMS': 'smsplus',
+            'segaMS': 'genesis_plus_gx',
             'segaMD': 'genesis_plus_gx',
             'segaGG': 'genesis_plus_gx',
             'segaCD': 'genesis_plus_gx',
@@ -132,7 +132,6 @@ class EmulatorJS {
         'picodrive': ['bin', 'gen', 'smd', 'md', '32x', 'cue', 'iso', 'sms', '68k', 'chd'],
         'ppsspp': ['elf', 'iso', 'cso', 'prx', 'pbp'],
         'prosystem': ['a78', 'bin'],
-        'smsplus': ['m3u', 'mdx', 'md', 'smd', 'gen', 'bin', 'cue', 'iso', 'chd', 'bms', 'sms', 'gg', 'sg', '68k', 'sgd'],
         'snes9x': ['smc', 'sfc', 'swc', 'fig', 'bs', 'st'],
         'stella2014': ['a26', 'bin', 'zip'],
         'vice_x64': ['d64', 'd6z', 'd71', 'd7z', 'd80', 'd81', 'd82', 'd8z', 'g64', 'g6z', 'g41', 'g4z', 'x64', 'x6z', 'nib', 'nbz', 'd2m', 'd4m', 't64', 'tap', 'tcrt', 'prg', 'p00', 'crt', 'bin', 'cmd', 'm3u', 'vfl', 'vsf', 'zip', '7z', 'gz', '20', '40', '60', 'a0', 'b0', 'rom'],
@@ -296,17 +295,17 @@ class EmulatorJS {
             this.config.adSize = (Array.isArray(this.config.adSize)) ? this.config.adSize : ["300px", "250px"];
             this.setupAds(this.config.adUrl, this.config.adSize[0], this.config.adSize[1]);
         }
-        this.isMobile = (function() {
-            let check = false;
-            (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
-            return check;
-        })();
         this.canvas = this.createElement('canvas');
         this.canvas.classList.add('ejs_canvas');
         this.bindListeners();
         this.config.netplayUrl = this.config.netplayUrl || "https://netplay.emulatorjs.org";
         this.fullscreen = false;
         this.supportsWebgl2 = !!document.createElement('canvas').getContext('webgl2');
+        this.isMobile = (function() {
+            let check = false;
+            (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+            return check;
+        })();
         this.isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         if (this.config.disableDatabases) {
             this.storage = {
@@ -723,7 +722,6 @@ class EmulatorJS {
             const name = this.config.gameName.replace(invalidCharacters, "").trim();
             if (name) return name;
         }
-        if (!this.fileName) return "game";
         let parts = this.fileName.split(".");
         parts.splice(parts.length-1, 1);
         return parts.join(".");
@@ -946,7 +944,7 @@ class EmulatorJS {
                 const altName = this.getBaseFileName(true);
 
                 let disableCue = false;
-                if (['pcsx_rearmed', 'genesis_plus_gx', 'picodrive', 'mednafen_pce', 'smsplus', 'vice_x64', 'vice_x64sc', 'vice_x128', 'vice_xvic', 'vice_xplus4', 'vice_xpet'].includes(this.getCore()) && this.config.disableCue === undefined) {
+                if (['pcsx_rearmed', 'genesis_plus_gx', 'picodrive', 'mednafen_pce', 'vice_x64', 'vice_x64sc', 'vice_x128', 'vice_xvic', 'vice_xplus4', 'vice_xpet'].includes(this.getCore()) && this.config.disableCue === undefined) {
                     disableCue = true;
                 } else {
                     disableCue = this.config.disableCue;
@@ -1293,15 +1291,12 @@ class EmulatorJS {
         this.elements.contextmenu = this.createElement('div');
         this.elements.contextmenu.classList.add("ejs_context_menu");
         this.addEventListener(this.game, 'contextmenu', (e) => {
+            if (this.started) {
+                this.elements.contextmenu.style.display = "block";
+                this.elements.contextmenu.style.left = e.offsetX+"px";
+                this.elements.contextmenu.style.top = e.offsetY+"px";
+            }
             e.preventDefault();
-            if ((this.config.buttonOpts && this.config.buttonOpts.rightClick === false) || !this.started) return;
-            const parentRect = this.elements.parent.getBoundingClientRect();
-            this.elements.contextmenu.style.display = "block";
-            const rect = this.elements.contextmenu.getBoundingClientRect();
-            const up = e.offsetY + rect.height > parentRect.bottom - 25;
-            const left = e.offsetX + rect.width > parentRect.right - 5;
-            this.elements.contextmenu.style.left = (e.offsetX - (left ? rect.width : 0)) + "px";
-            this.elements.contextmenu.style.top = (e.offsetY - (up ? rect.height : 0)) + "px";
         })
         const hideMenu = () => {
             this.elements.contextmenu.style.display = "none";
@@ -1721,7 +1716,7 @@ class EmulatorJS {
         let stateUrl;
         const saveState = addButton("Save State", '<svg viewBox="0 0 448 512"><path fill="currentColor" d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z"/></svg>', async () => {
             const state = this.gameManager.getState();
-            const called = this.callEvent("saveState", {
+            const called = this.callEvent("save", {
                 screenshot: await this.gameManager.screenshot(),
                 state: state
             });
@@ -1740,7 +1735,7 @@ class EmulatorJS {
             }
         });
         const loadState = addButton("Load State", '<svg viewBox="0 0 576 512"><path fill="currentColor" d="M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z"/></svg>', async () => {
-            const called = this.callEvent("loadState");
+            const called = this.callEvent("load");
             if (called > 0) return;
             if (this.settings['save-state-location'] === "browser" && this.saveInBrowserSupported()) {
                 this.storage.states.get(this.getBaseFileName()+".state").then(e => {
@@ -1769,11 +1764,6 @@ class EmulatorJS {
         
         const saveSavFiles = addButton("Export Save File", '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 23 23"><path d="M3 6.5V5C3 3.89543 3.89543 3 5 3H16.1716C16.702 3 17.2107 3.21071 17.5858 3.58579L20.4142 6.41421C20.7893 6.78929 21 7.29799 21 7.82843V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V17.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path><path d="M8 3H16V8.4C16 8.73137 15.7314 9 15.4 9H8.6C8.26863 9 8 8.73137 8 8.4V3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path><path d="M18 21V13.6C18 13.2686 17.7314 13 17.4 13H15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path><path d="M6 21V17.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path><path d="M12 12H1M1 12L4 9M1 12L4 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>', async () => {
             const file = await this.gameManager.getSaveFile();
-            const called = this.callEvent("saveSave", {
-                screenshot: await this.gameManager.screenshot(),
-                save: file
-            });
-            if (called > 0) return;
             const blob = new Blob([file]);
             savUrl = URL.createObjectURL(blob);
             const a = this.createElement("a");
@@ -1782,8 +1772,6 @@ class EmulatorJS {
             a.click();
         });
         const loadSavFiles = addButton("Import Save File", '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 23 23"><path d="M3 7.5V5C3 3.89543 3.89543 3 5 3H16.1716C16.702 3 17.2107 3.21071 17.5858 3.58579L20.4142 6.41421C20.7893 6.78929 21 7.29799 21 7.82843V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V16.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path><path d="M6 21V17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 21V13.6C18 13.2686 17.7314 13 17.4 13H15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path><path d="M16 3V8.4C16 8.73137 15.7314 9 15.4 9H13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path><path d="M8 3V6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 12H12M12 12L9 9M12 12L9 15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>', async () => {
-            const called = this.callEvent("loadSave");
-            if (called > 0) return;
             const file = await this.selectFile();
             const sav = new Uint8Array(await file.arrayBuffer());
             const path = this.gameManager.getSaveFilePath();
@@ -2002,7 +1990,7 @@ class EmulatorJS {
                 pauseButton.style.display = "none";
                 playButton.style.display = "none";
             }
-            if (this.config.buttonOpts.contextMenuButton === false && this.config.buttonOpts.rightClick !== false && this.isMobile === false) contextMenuButton.style.display = "none"
+            if (this.config.buttonOpts.contextMenuButton === false) contextMenuButton.style.display = "none"
             if (this.config.buttonOpts.restart === false) restartButton.style.display = "none"
             if (this.config.buttonOpts.settings === false) settingButton[0].style.display = "none"
             if (this.config.buttonOpts.fullscreen === false) {
@@ -3083,11 +3071,11 @@ class EmulatorJS {
         this.elements.parent.appendChild(this.virtualGamepad);
 
         const speedControlButtons = [
-            {"type":"button","text":"Fast","id":"speed_fast","location":"center","left":-35,"top":50,"fontSize":15,"block":true,"input_value":27},
-            {"type":"button","text":"Slow","id":"speed_slow","location":"center","left":95,"top":50,"fontSize":15,"block":true,"input_value":29},
+            {"type":"button","text":"Fast","id":"speed-fast","location":"center","left":-35,"top":50,"fontSize":15,"block":true,"input_value":27},
+            {"type":"button","text":"Slow","id":"speed-slow","location":"center","left":95,"top":50,"fontSize":15,"block":true,"input_value":29},
         ];
         if (this.rewindEnabled) {
-            speedControlButtons.push({"type":"button","text":"Rewind","id":"speed_rewind","location":"center","left":30,"top":50,"fontSize":15,"block":true,"input_value":28});
+            speedControlButtons.push({"type":"button","text":"Rewind","id":"speed-rewind","location":"center","left":30,"top":50,"fontSize":15,"block":true,"input_value":28});
         }
 
         let info;
@@ -3138,7 +3126,7 @@ class EmulatorJS {
             info = [
                 {"type":"button","text":"B","id":"b","location":"right","left":10,"top":70,"bold":true,"input_value":0},
                 {"type":"button","text":"A","id":"a","location":"right","left":81,"top":40,"bold":true,"input_value":8},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Start","id":"start","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"Select","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2},
                 {"type":"button","text":"L","id":"l","location":"left","left":3,"top":-90,"bold":true,"block":true,"input_value":10},
@@ -3149,7 +3137,7 @@ class EmulatorJS {
             info = [
                 {"type":"button","text":"A","id":"a","location":"right","left":81,"top":40,"bold":true,"input_value":8},
                 {"type":"button","text":"B","id":"b","location":"right","left":10,"top":70,"bold":true,"input_value":0},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Start","id":"start","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"Select","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2}
             ];
@@ -3158,7 +3146,7 @@ class EmulatorJS {
             info = [
                 {"type":"button","text":"B","id":"b","location":"right","right":75,"top":70,"bold":true,"input_value":0},
                 {"type":"button","text":"A","id":"a","location":"right","right":5,"top":70,"bold":true,"input_value":8},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Start","id":"start","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"Select","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2}
             ];
@@ -3167,8 +3155,8 @@ class EmulatorJS {
             info = [
                 {"type":"button","text":"B","id":"b","location":"right","left":-10,"top":95,"input_value":1,"bold":true},
                 {"type":"button","text":"A","id":"a","location":"right","left":40,"top":150,"input_value":0,"bold":true},
-                {"type":"zone","id":"stick","location":"left","left":"50%","top":"100%","joystickInput":true,"inputValues":[16, 17, 18, 19]},
-                {"type":"zone","id":"dpad","location":"left","left":"50%","top":"0%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"zone","location":"left","left":"50%","top":"100%","joystickInput":true,"inputValues":[16, 17, 18, 19]},
+                {"type":"zone","location":"left","left":"50%","top":"0%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Start","id":"start","location":"center","left":30,"top":-10,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"L","id":"l","block":true,"location":"top","left":10,"top":-40,"bold":true,"input_value":10},
                 {"type":"button","text":"R","id":"r","block":true,"location":"top","right":10,"top":-40,"bold":true,"input_value":11},
@@ -3185,7 +3173,7 @@ class EmulatorJS {
                 {"type":"button","text":"Y","id":"y","location":"right","top":40,"bold":true,"input_value":1},
                 {"type":"button","text":"A","id":"a","location":"right","left":81,"top":40,"bold":true,"input_value":8},
                 {"type":"button","text":"B","id":"b","location":"right","left":40,"top":80,"bold":true,"input_value":0},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Start","id":"start","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"Select","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2},
                 {"type":"button","text":"L","id":"l","location":"left","left":3,"top":-100,"bold":true,"block":true,"input_value":10},
@@ -3198,7 +3186,7 @@ class EmulatorJS {
                 {"type":"button","text":"Y","id":"y","location":"right","top":40,"bold":true,"input_value":1},
                 {"type":"button","text":"A","id":"a","location":"right","left":81,"top":40,"bold":true,"input_value":8},
                 {"type":"button","text":"B","id":"b","location":"right","left":40,"top":80,"bold":true,"input_value":0},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Start","id":"start","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"Select","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2},
                 {"type":"button","text":"L","id":"l","location":"left","left":3,"top":-100,"bold":true,"block":true,"input_value":10},
@@ -3213,23 +3201,23 @@ class EmulatorJS {
                 {"type":"button","text":"X","id":"x","location":"right","right":145,"top":0,"bold":true,"input_value":10},
                 {"type":"button","text":"Y","id":"y","location":"right","right":75,"top":0,"bold":true,"input_value":9},
                 {"type":"button","text":"Z","id":"z","location":"right","right":5,"top":0,"bold":true,"input_value":11},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Mode","id":"mode","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2},
                 {"type":"button","text":"Start","id":"start","location":"center","left":60,"fontSize":15,"block":true,"input_value":3}
             ];
             info.push(...speedControlButtons);
         } else if ("segaMS" === this.getControlScheme()) {
             info = [
-                {"type":"button","text":"1","id":"button_1","location":"right","left":10,"top":40,"bold":true,"input_value":0},
-                {"type":"button","text":"2","id":"button_2","location":"right","left":81,"top":40,"bold":true,"input_value":8},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]}
+                {"type":"button","text":"1","id":"button1","location":"right","left":10,"top":40,"bold":true,"input_value":0},
+                {"type":"button","text":"2","id":"button2","location":"right","left":81,"top":40,"bold":true,"input_value":8},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]}
             ];
             info.push(...speedControlButtons);
         } else if ("segaGG" === this.getControlScheme()) {
             info = [
-                {"type":"button","text":"1","id":"button_1","location":"right","left":10,"top":70,"bold":true,"input_value":0},
-                {"type":"button","text":"2","id":"button_2","location":"right","left":81,"top":40,"bold":true,"input_value":8},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"button","text":"1","id":"button1","location":"right","left":10,"top":70,"bold":true,"input_value":0},
+                {"type":"button","text":"2","id":"button2","location":"right","left":81,"top":40,"bold":true,"input_value":8},
+                {"type":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Start","id":"start","location":"center","left":30,"fontSize":15,"block":true,"input_value":3}
             ];
             info.push(...speedControlButtons);
@@ -3241,7 +3229,7 @@ class EmulatorJS {
                 {"type":"button","text":"X","id":"x","location":"right","right":145,"top":0,"bold":true,"input_value":9},
                 {"type":"button","text":"Y","id":"y","location":"right","right":75,"top":0,"bold":true,"input_value":10},
                 {"type":"button","text":"Z","id":"z","location":"right","right":5,"top":0,"bold":true,"input_value":11},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"L","id":"l","location":"left","left":3,"top":-90,"bold":true,"block":true,"input_value":12},
                 {"type":"button","text":"R","id":"r","location":"right","right":3,"top":-90,"bold":true,"block":true,"input_value":13},
                 {"type":"button","text":"Start","id":"start","location":"center","left":30,"fontSize":15,"block":true,"input_value":3}
@@ -3249,17 +3237,17 @@ class EmulatorJS {
             info.push(...speedControlButtons);
         } else if ("atari2600" === this.getControlScheme()) {
             info = [
-                {"type":"button","text":"","id":"button_1","location":"right","right":10,"top":70,"bold":true,"input_value":0},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"button","text":"","id":"button1","location":"right","right":10,"top":70,"bold":true,"input_value":0},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Reset","id":"reset","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"Select","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2}
             ];
             info.push(...speedControlButtons);
         } else if ("atari7800" === this.getControlScheme()) {
             info = [
-                {"type":"button","text":"1","id":"button_1","location":"right","right":75,"top":70,"bold":true,"input_value":0},
-                {"type":"button","text":"2","id":"button_2","location":"right","right":5,"top":70,"bold":true,"input_value":8},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"button","text":"1","id":"button1","location":"right","right":75,"top":70,"bold":true,"input_value":0},
+                {"type":"button","text":"2","id":"button2","location":"right","right":5,"top":70,"bold":true,"input_value":8},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Reset","id":"reset","location":"center","left":-35,"fontSize":15,"block":true,"input_value":9},
                 {"type":"button","text":"Pause","id":"pause","location":"center","left":95,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"Select","id":"select","location":"center","left":30,"fontSize":15,"block":true,"input_value":2},
@@ -3267,11 +3255,11 @@ class EmulatorJS {
             info.push(...speedControlButtons);
         } else if ("lynx" === this.getControlScheme()) {
             info = [
-                {"type":"button","text":"B","id":"button_1","location":"right","right":75,"top":70,"bold":true,"input_value":0},
-                {"type":"button","text":"A","id":"button_2","location":"right","right":5,"top":70,"bold":true,"input_value":8},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
-                {"type":"button","text":"Opt 1","id":"option_1","location":"center","left":-35,"fontSize":15,"block":true,"input_value":10},
-                {"type":"button","text":"Opt 2","id":"option_2","location":"center","left":95,"fontSize":15,"block":true,"input_value":11},
+                {"type":"button","text":"B","id":"button1","location":"right","right":75,"top":70,"bold":true,"input_value":0},
+                {"type":"button","text":"A","id":"button2","location":"right","right":5,"top":70,"bold":true,"input_value":8},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"button","text":"Opt 1","id":"option1","location":"center","left":-35,"fontSize":15,"block":true,"input_value":10},
+                {"type":"button","text":"Opt 2","id":"option2","location":"center","left":95,"fontSize":15,"block":true,"input_value":11},
                 {"type":"button","text":"Start","id":"start","location":"center","left":30,"fontSize":15,"block":true,"input_value":3}
             ];
             info.push(...speedControlButtons);
@@ -3280,17 +3268,17 @@ class EmulatorJS {
                 {"type":"button","text":"A","id":"a","location":"right","right":145,"top":70,"bold":true,"input_value":8},
                 {"type":"button","text":"B","id":"b","location":"right","right":75,"top":70,"bold":true,"input_value":0},
                 {"type":"button","text":"C","id":"c","location":"right","right":5,"top":70,"bold":true,"input_value":1},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
-                {"type":"button","text":"Option","id":"option","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
-                {"type":"button","text":"Pause","id":"pause","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2}
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"button","text":"Option","id":"start","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
+                {"type":"button","text":"Pause","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2}
             ];
             info.push(...speedControlButtons);
         } else if ("vb" === this.getControlScheme()) {
             info = [
                 {"type":"button","text":"B","id":"b","location":"right","right":75,"top":150,"bold":true,"input_value":0},
                 {"type":"button","text":"A","id":"a","location":"right","right":5,"top":150,"bold":true,"input_value":8},
-                {"type":"dpad","id":"left_dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
-                {"type":"dpad","id":"right_dpad","location":"right","left":"50%","right":"50%","joystickInput":false,"inputValues":[19,18,17,16]},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"right","left":"50%","right":"50%","joystickInput":false,"inputValues":[19,18,17,16]},
                 {"type":"button","text":"L","id":"l","location":"left","left":3,"top":-90,"bold":true,"block":true,"input_value":10},
                 {"type":"button","text":"R","id":"r","location":"right","right":3,"top":-90,"bold":true,"block":true,"input_value":11},
                 {"type":"button","text":"Start","id":"start","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
@@ -3302,18 +3290,18 @@ class EmulatorJS {
                 {"type":"button","text":"A","id":"a","location":"right","right":145,"top":70,"bold":true,"input_value":1},
                 {"type":"button","text":"B","id":"b","location":"right","right":75,"top":70,"bold":true,"input_value":0},
                 {"type":"button","text":"C","id":"c","location":"right","right":5,"top":70,"bold":true,"input_value":8},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"L","id":"l","location":"left","left":3,"top":-90,"bold":true,"block":true,"input_value":10},
                 {"type":"button","text":"R","id":"r","location":"right","right":3,"top":-90,"bold":true,"block":true,"input_value":11},
-                {"type":"button","text":"X","id":"x","location":"center","left":-5,"fontSize":15,"block":true,"bold":true,"input_value":2},
-                {"type":"button","text":"P","id":"p","location":"center","left":60,"fontSize":15,"block":true,"bold":true,"input_value":3}
+                {"type":"button","text":"X","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"bold":true,"input_value":2},
+                {"type":"button","text":"P","id":"start","location":"center","left":60,"fontSize":15,"block":true,"bold":true,"input_value":3}
             ];
             info.push(...speedControlButtons);
         } else if ("pce" === this.getControlScheme()) {
             info = [
                 {"type":"button","text":"II","id":"ii","location":"right","right":75,"top":70,"bold":true,"input_value":0},
                 {"type":"button","text":"I","id":"i","location":"right","right":5,"top":70,"bold":true,"input_value":8},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Run","id":"run","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"Select","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2}
             ];
@@ -3322,7 +3310,7 @@ class EmulatorJS {
                 info = [
                     {"type":"button","text":"A","id":"a","location":"right","right":75,"top":70,"bold":true,"input_value":0},
                     {"type":"button","text":"B","id":"b","location":"right","right":5,"top":50,"bold":true,"input_value":8},
-                    {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                    {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                     {"type":"button","text":"Option","id":"option","location":"center","left":30,"fontSize":15,"block":true,"input_value":3}
                 ];
                 info.push(...speedControlButtons);
@@ -3330,16 +3318,16 @@ class EmulatorJS {
             info = [
                 {"type":"button","text":"B","id":"b","location":"right","right":75,"top":150,"bold":true,"input_value":0},
                 {"type":"button","text":"A","id":"a","location":"right","right":5,"top":150,"bold":true,"input_value":8},
-                {"type":"dpad","id":"x_dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
-                {"type":"dpad","id":"y_dpad","location":"right","left":"50%","right":"50%","joystickInput":false,"inputValues":[13,12,10,11]},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"right","left":"50%","right":"50%","joystickInput":false,"inputValues":[13,12,10,11]},
                 {"type":"button","text":"Start","id":"start","location":"center","left":30,"fontSize":15,"block":true,"input_value":3},
             ];
             info.push(...speedControlButtons);
         } else if ('coleco' === this.getControlScheme()) {
             info = [
-                {"type":"button","text":"L","id":"l","location":"right","left":10,"top":40,"bold":true,"input_value":8},
-                {"type":"button","text":"R","id":"r","location":"right","left":81,"top":40,"bold":true,"input_value":0},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]}
+                {"type":"button","text":"L","id":"buttonLeft","location":"right","left":10,"top":40,"bold":true,"input_value":8},
+                {"type":"button","text":"R","id":"buttonRight","location":"right","left":81,"top":40,"bold":true,"input_value":0},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]}
             ];
             info.push(...speedControlButtons);
         } else if ('pcfx' === this.getControlScheme()) {
@@ -3350,7 +3338,7 @@ class EmulatorJS {
                 {"type":"button","text":"IV","id":"iv","location":"right","right":5,"top":0,"bold":true,"input_value":1},
                 {"type":"button","text":"V","id":"v","location":"right","right":75,"top":0,"bold":true,"input_value":10},
                 {"type":"button","text":"VI","id":"vi","location":"right","right":145,"top":0,"bold":true,"input_value":11},
-                {"type":"dpad","id":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"dpad","location":"left","left":"50%","right":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Select","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2},
                 {"type":"button","text":"Run","id":"run","location":"center","left":60,"fontSize":15,"block":true,"input_value":3}
             ];
@@ -3358,10 +3346,10 @@ class EmulatorJS {
         } else {
             info = [
                 {"type":"button","text":"Y","id":"y","location":"right","left":40,"bold":true,"input_value":9},
-                {"type":"button","text":"X","id":"x","location":"right","top":40,"bold":true,"input_value":1},
+                {"type":"button","text":"X","id":"X","location":"right","top":40,"bold":true,"input_value":1},
                 {"type":"button","text":"B","id":"b","location":"right","left":81,"top":40,"bold":true,"input_value":8},
                 {"type":"button","text":"A","id":"a","location":"right","left":40,"top":80,"bold":true,"input_value":0},
-                {"type":"zone","id":"dpad","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
+                {"type":"zone","location":"left","left":"50%","top":"50%","joystickInput":false,"inputValues":[4,5,6,7]},
                 {"type":"button","text":"Start","id":"start","location":"center","left":60,"fontSize":15,"block":true,"input_value":3},
                 {"type":"button","text":"Select","id":"select","location":"center","left":-5,"fontSize":15,"block":true,"input_value":2}
             ];
@@ -3399,7 +3387,6 @@ class EmulatorJS {
         
         const leftHandedMode = false;
         const blockCSS = 'height:31px;text-align:center;border:1px solid #ccc;border-radius:5px;line-height:31px;';
-        const controlSchemeCls = `cs_${this.getControlScheme()}`.replaceAll(/\s/g, '_');
         
         for (let i=0; i<info.length; i++) {
             if (info[i].type !== 'button') continue;
@@ -3437,10 +3424,7 @@ class EmulatorJS {
                 const button = this.createElement("div");
                 button.style = style;
                 button.innerText = info[i].text;
-                button.classList.add("ejs_virtualGamepad_button", controlSchemeCls);
-                if (info[i].id) {
-                    button.classList.add(`b_${info[i].id}`);
-                }
+                button.classList.add("ejs_virtualGamepad_button");
                 elems[info[i].location].appendChild(button);
                 const value = info[i].input_new_cores || info[i].input_value;
                 this.addEventListener(button, "touchstart touchend touchcancel", (e) => {
@@ -3564,10 +3548,6 @@ class EmulatorJS {
             if (dpad.top) {
                 style += 'top:'+dpad.top+';';
             }
-            elem.classList.add(controlSchemeCls);
-            if (dpad.id) {
-                elem.classList.add(`b_${dpad.id}`);
-            }
             elem.style = style;
             elems[dpad.location].appendChild(elem);
             createDPad({container: elem, event: (up, down, left, right) => {
@@ -3601,10 +3581,6 @@ class EmulatorJS {
             this.addEventListener(elem, "touchstart touchmove touchend touchcancel", (e) => {
                 e.preventDefault();
             });
-            elem.classList.add(controlSchemeCls);
-            if (zone.id) {
-                elem.classList.add(`b_${zone.id}`);
-            }
             elems[zone.location].appendChild(elem);
             const zoneObj = nipplejs.create({
                 'zone': elem,
