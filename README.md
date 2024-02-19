@@ -1,5 +1,8 @@
 # EmulatorJS Container
 
+> [!NOTE]
+> Forked from [EmulatorJS/EmulatorJS](https://github.com/EmulatorJS/EmulatorJS)
+
 <img src="docs/play.png" />
 
 ## Configuration
